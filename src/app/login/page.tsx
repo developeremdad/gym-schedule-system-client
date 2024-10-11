@@ -4,9 +4,11 @@ import { useAppDispatch } from "@/redux/hooks";
 import { storeUserInfo } from "@/services/actions/auth.services";
 import { userLogin } from "@/services/actions/userLogin";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 const LoginPage = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const [formData, setFormData] = useState({
     email: "",
@@ -26,12 +28,14 @@ const LoginPage = () => {
 
     try {
       const res = await userLogin(formData);
+      console.log(res);
 
       if (res?.data?.accessToken) {
         // Successful login
-        toast.success(res?.message);
         storeUserInfo({ token: res?.data?.accessToken });
         dispatch(setUser({ user: res.data, token: res.data.accessToken }));
+        toast.success(res?.message);
+        router.push("/");
       } else {
         // Failed login
         toast.error(res?.message);

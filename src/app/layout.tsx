@@ -7,8 +7,8 @@ import Providers from "./lib/Providers/Providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DevEmdad | Dashboard",
-  description: "This is a developer emdad Dashboard",
+  title: "Gym Management",
+  description: "This is a gym management service",
 };
 
 export default function RootLayout({

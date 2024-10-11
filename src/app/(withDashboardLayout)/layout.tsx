@@ -31,7 +31,7 @@ const WithDashboardLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div>
-      <PrivateRoute roles={["trainer"]}>
+      <PrivateRoute roles={["trainer", "admin", "trainee"]}>
         <div className="flex min-h-screen">
           <Sidebar />
           <div className="flex-grow bg-gray-100 p-5">{children}</div>
