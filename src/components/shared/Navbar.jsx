@@ -64,7 +64,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {!userInfo?.email ? (
+          {userInfo?.email ? (
             <Link href="/dashboard" className="btn">
               Dashboard
             </Link>

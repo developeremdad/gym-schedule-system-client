@@ -39,7 +39,6 @@ const LoginPage = () => {
       }
     } catch (err: any) {
       console.log(err);
-      // toast.error("Invalid credentials, Please try again.");
     }
   };
 

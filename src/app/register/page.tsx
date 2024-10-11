@@ -1,8 +1,6 @@
 "use client";
 import { useAppDispatch } from "@/redux/hooks";
-import { storeUserInfo } from "@/services/actions/auth.services";
 import { registerTrainee } from "@/services/actions/registerTrainee";
-import { userLogin } from "@/services/actions/userLogin";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -32,40 +30,18 @@ const RegisterPage = () => {
       toast.error("Confirm Password does not match");
     }
 
-    const formData = new FormData();
-    formData.append("fullName", data.fullName);
-    formData.append("email", data.email);
-    formData.append("password", data.password);
+    const registerData = {
+      fullName: data.fullName,
+      email: data.email,
+      password: data.password,
+    };
 
     try {
-      const res = await registerTrainee(formData);
-      // console.log(res);
-      if (res?.data?.id) {
-        toast.success(res?.message);
-        const result = await userLogin({
-          email: data.email,
-          password: data.password,
-        });
-        if (result?.data?.accessToken) {
-          storeUserInfo({ token: result?.data?.accessToken });
-          router.push("/dashboard");
-        }
-      }
-      //   const res = await userLogin(formData);
-
-      //   if (res?.data?.token) {
-      //     // Successful login
-      //     toast.success(res?.message);
-      //     storeUserInfo({ token: res?.data?.token });
-      //     dispatch(setUser({ user: res.data, token: res.data.token }));
-      //   } else {
-      //     // Failed login
-      //     toast.error(res?.message);
-      //     console.log(res);
-      //   }
+      const res = await registerTrainee(registerData);
+      toast.success(res?.message);
+      router.push("/login");
     } catch (err: any) {
       console.log(err);
-      // toast.error("Invalid credentials, Please try again.");
     }
   };
 
