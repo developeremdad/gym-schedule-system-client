@@ -70,7 +70,7 @@ const Navbar = () => {
                 userInfo?.role === "admin"
                   ? "/admin/manage-trainers"
                   : userInfo?.role === "trainer"
-                  ? "/trainer/my-assign-classes"
+                  ? "/trainer/my-assigned-classes"
                   : userInfo?.role === "trainee"
                   ? "/trainee/my-classes"
                   : "/"

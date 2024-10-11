@@ -1,4 +1,7 @@
-import { TClassSchedule } from "@/types/classSchedule.type";
+import {
+  TClassSchedule,
+  TClassScheduleWithTrainee,
+} from "@/types/classSchedule.type";
 import { TResponseRedux } from "@/types/global";
 import { baseApi } from "../../api/baseApi";
 
@@ -15,6 +18,21 @@ const classScheduleManagement = baseApi.injectEndpoints({
         return { data: response.data, meta: response.meta };
       },
       providesTags: ["schedule"],
+    }),
+
+    getTrainerClassSchedule: builder.query({
+      query: () => {
+        return {
+          url: "/trainers/my-class-schedule",
+          method: "GET",
+        };
+      },
+      transformResponse: (
+        response: TResponseRedux<TClassScheduleWithTrainee[]>
+      ) => {
+        return { data: response.data };
+      },
+      providesTags: ["schedule", "user"],
     }),
 
     addNewClassSchedule: builder.mutation({
@@ -64,6 +82,7 @@ const classScheduleManagement = baseApi.injectEndpoints({
 
 export const {
   useGetAllClassSchedulesQuery,
+  useGetTrainerClassScheduleQuery,
   useAddNewClassScheduleMutation,
   useDeleteClassScheduleMutation,
   useUpdateClassScheduleMutation,
