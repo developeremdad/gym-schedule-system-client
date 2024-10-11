@@ -1,6 +1,7 @@
 "use client";
 import PrivateRoute from "@/components/Dashboard/PrivateRoute";
 import Sidebar from "@/components/Dashboard/Sidebar";
+import CustomSpinner from "@/components/shared/CustomSpinner";
 import { isLoggedIn } from "@/services/actions/auth.services";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -20,13 +21,7 @@ const WithDashboardLayout = ({ children }: { children: React.ReactNode }) => {
   }, [router]);
 
   if (loading) {
-    return (
-      <div>
-        <h1 className="text-center text-error mt-48">
-          <span className="loading loading-infinity loading-lg"></span>
-        </h1>
-      </div>
-    );
+    return <CustomSpinner />;
   }
 
   return (

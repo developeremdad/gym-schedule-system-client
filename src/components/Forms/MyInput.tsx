@@ -6,7 +6,6 @@ type TInputProps = {
   placeholder?: string;
   type?: string;
   required?: boolean;
-  css?: string;
   disabled?: boolean;
 };
 

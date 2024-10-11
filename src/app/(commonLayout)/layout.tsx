@@ -1,5 +1,6 @@
 "use client";
 import PrivateRoute from "@/components/Dashboard/PrivateRoute";
+import CustomSpinner from "@/components/shared/CustomSpinner";
 import Navbar from "@/components/shared/Navbar";
 import { isLoggedIn } from "@/services/actions/auth.services";
 import { useRouter } from "next/navigation";
@@ -18,13 +19,7 @@ const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   }, [router]);
 
   if (loading) {
-    return (
-      <div>
-        <h1 className="text-center text-error mt-48">
-          <span className="loading loading-infinity loading-lg"></span>
-        </h1>
-      </div>
-    );
+    return <CustomSpinner />;
   }
 
   return (

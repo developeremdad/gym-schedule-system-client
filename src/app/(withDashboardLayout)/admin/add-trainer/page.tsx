@@ -2,6 +2,7 @@
 import MyForm from "@/components/Forms/MyForm";
 import MyInput from "@/components/Forms/MyInput";
 import { useAddNewTrainerMutation } from "@/redux/features/admin/admin.api";
+import { TError } from "@/types/global";
 import { FieldValues, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -15,7 +16,7 @@ const AddTrainer = () => {
   }
 
   if (error) {
-    toast.error("Something went wrong.");
+    toast.error((error as TError)?.data?.message);
   }
 
   const defaultValues = {
@@ -26,15 +27,12 @@ const AddTrainer = () => {
 
   const handleFormSubmit = async (values: FieldValues) => {
     addNewTrainer(values);
-    console.log(values);
   };
 
   return (
     <div>
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold text-center mb-4">
-          Create New Trainer
-        </h1>
+        <h1 className="text-2xl font-bold mb-4">Create New Trainer</h1>
         <MyForm onSubmit={handleFormSubmit} defaultValues={defaultValues}>
           <MyInput
             name="fullName"
