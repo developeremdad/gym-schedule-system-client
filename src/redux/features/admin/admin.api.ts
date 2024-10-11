@@ -28,6 +28,14 @@ const adminApiManagement = baseApi.injectEndpoints({
       invalidatesTags: ["user"],
     }),
 
+    getTrainerById: builder.query({
+      query: (trainerId) => ({
+        url: `/trainers/${trainerId}`,
+        method: "GET",
+      }),
+      providesTags: ["user"],
+    }),
+
     deleteTrainer: builder.mutation({
       query: (payload) => {
         return {
@@ -39,13 +47,11 @@ const adminApiManagement = baseApi.injectEndpoints({
     }),
 
     updateTrainer: builder.mutation({
-      query: (payload) => {
-        return {
-          url: `/trainer/${payload.id}`,
-          method: "PATCH",
-          body: payload.data,
-        };
-      },
+      query: ({ id, data }) => ({
+        url: `/trainers/${id}`,
+        method: "PATCH",
+        body: data,
+      }),
       invalidatesTags: ["user"],
     }),
   }),
@@ -54,5 +60,7 @@ const adminApiManagement = baseApi.injectEndpoints({
 export const {
   useGetAllTrainersQuery,
   useAddNewTrainerMutation,
+  useGetTrainerByIdQuery,
   useDeleteTrainerMutation,
+  useUpdateTrainerMutation,
 } = adminApiManagement;

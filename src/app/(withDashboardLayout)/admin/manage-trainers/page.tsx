@@ -52,7 +52,11 @@ const ManageTrainers = () => {
                 <td>{trainer.role}</td>
                 <td>{new Date(trainer.createdAt).toLocaleDateString()}</td>
                 <td>
-                  <button className="btn btn-sm btn-warning mx-1">Edit</button>
+                  <Link href={`/admin/${trainer?._id}`}>
+                    <button className="btn btn-sm btn-warning mx-1">
+                      Edit
+                    </button>
+                  </Link>
                   <button
                     className="btn btn-sm btn-danger mx-1"
                     onClick={() => handleDeleteTrainer(trainer?._id)}
