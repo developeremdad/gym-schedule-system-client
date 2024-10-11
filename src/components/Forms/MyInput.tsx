@@ -16,7 +16,6 @@ const MyInput = ({
   placeholder,
   label = "",
   required,
-  css,
   disabled = false,
 }: TInputProps) => {
   const { control } = useFormContext();
@@ -36,7 +35,7 @@ const MyInput = ({
             {...field}
             type={type}
             disabled={disabled}
-            className={`input input-bordered ${css ? css : ""}`}
+            className={`input input-bordered`}
             placeholder={placeholder}
             required={required}
           />

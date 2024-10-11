@@ -3,6 +3,7 @@
 import { getUserInfo } from "@/services/actions/auth.services";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import CustomSpinner from "../shared/CustomSpinner";
 
 const PrivateRoute = ({
   children,
@@ -24,9 +25,7 @@ const PrivateRoute = ({
   if (!user || (roles && !roles.includes(user.role))) {
     return (
       <div>
-        <h1 className="text-center text-error mt-48">
-          <span className="loading loading-infinity loading-lg"></span>
-        </h1>
+        <CustomSpinner />
       </div>
     );
   }

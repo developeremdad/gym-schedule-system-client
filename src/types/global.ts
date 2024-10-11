@@ -2,9 +2,9 @@ import { BaseQueryApi } from "@reduxjs/toolkit/query";
 
 export type TError = {
   data: {
+    success: boolean;
     message: string;
     errorDetails: Record<string, any>;
-    success: boolean;
   };
   status: number;
 };
