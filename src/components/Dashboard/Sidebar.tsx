@@ -15,7 +15,7 @@ const Sidebar = () => {
     dispatch(logout());
   };
   return (
-    <div className="h-screen bg-gray-300 text-black border border-r-orange-500">
+    <div className="h-screen bg-gray-300 text-black border border-r-gray-200">
       <div className="p-4">
         <h2 className="text-xl font-bold capitalize">
           {userInfo?.role} <br /> Dashboard
@@ -24,29 +24,29 @@ const Sidebar = () => {
       <nav className="mt-5">
         {userInfo.role === "admin" && (
           <ul>
-            <li className="hover:bg-orange-500">
+            <li className="hover:bg-gray-200">
               <Link href="/ ">
                 <span className="block py-2.5 px-4">Home</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <Link href="/admin/manage-trainers">
                 <span className="block py-2.5 px-4">Manage Trainers</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500">
+            <li className="hover:bg-gray-200">
               <Link href="/admin/manage-class-schedules">
                 <span className="block py-2.5 px-4">
                   Manage Class Schedules
                 </span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500">
+            <li className="hover:bg-gray-200">
               <Link href="/admin/add-class-schedule">
                 <span className="block py-2.5 px-4">Add Class Schedule</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <button onClick={handleLogOut}>
                 <span className="block py-2.5 px-4 font-bold">Logout</span>
               </button>
@@ -55,17 +55,17 @@ const Sidebar = () => {
         )}
         {userInfo.role === "trainer" && (
           <ul>
-            <li className="hover:bg-orange-500">
+            <li className="hover:bg-gray-200">
               <Link href="/ ">
                 <span className="block py-2.5 px-4">Home</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <Link href="/trainer/my-assigned-classes">
                 <span className="block py-2.5 px-4">My Assigned Classes</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <button onClick={handleLogOut}>
                 <span className="block py-2.5 px-4 font-bold">Logout</span>
               </button>
@@ -74,22 +74,22 @@ const Sidebar = () => {
         )}
         {userInfo.role === "trainee" && (
           <ul>
-            <li className="hover:bg-orange-500">
+            <li className="hover:bg-gray-200">
               <Link href="/ ">
                 <span className="block py-2.5 px-4">Home</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <Link href="/trainee/my-classes">
                 <span className="block py-2.5 px-4">My Classes</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <Link href="/trainee/available-schedule">
                 <span className="block py-2.5 px-4">Available Schedule</span>
               </Link>
             </li>
-            <li className="hover:bg-orange-500 active:bg-orange-500">
+            <li className="hover:bg-gray-200 active:bg-gray-200">
               <button onClick={handleLogOut}>
                 <span className="block py-2.5 px-4 font-bold">Logout</span>
               </button>
