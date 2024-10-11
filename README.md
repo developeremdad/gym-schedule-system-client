@@ -1,0 +1,51 @@
+# Blood Donation Server with Typescript, Redux and Next js
+
+## How to run this project
+
+---
+
+### Clone the project
+
+    git clone repository-url
+
+### Go to project folder
+
+    cd project_name
+
+### Install dependencies
+
+    npm install
+
+### Open project to vscode
+
+    code .
+
+### Open terminal & Run project
+
+    npm run dev
+
+### Build project for deploying
+
+    npm run build
+
+### Run build project
+
+    npm run start
+
+## Technology used
+
+---
+
+- PostgreSQL (Database)
+- Prisma ORM
+- Express
+- Typescript
+- Zod (Validation)
+- JWT-token
+- Bcrypt (Hashing)
+- Next js
+- Redux
+
+---
+
+Happy Coding - Developeremdad 🧑‍💻
