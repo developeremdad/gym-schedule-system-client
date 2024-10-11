@@ -1,8 +1,9 @@
+import Link from "next/link";
 import React from "react";
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="landing-page">
+    <div>
       {/* Hero Section */}
       <section className="bg-gray-800 text-white h-screen flex items-center justify-center">
         <div className="text-center">
@@ -11,56 +12,11 @@ const LandingPage: React.FC = () => {
             Join the best fitness community and achieve your goals with our top
             trainers and classes.
           </p>
-          <button className="bg-yellow-500 text-white px-8 py-3 rounded-full hover:bg-yellow-600 transition-all">
-            Get Started
-          </button>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 bg-white text-gray-900">
-        <div className="container mx-auto px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Why Choose Us?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <img
-                src="/images/feature1.png"
-                alt="Feature 1"
-                className="mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2">Top Trainers</h3>
-              <p>
-                Our certified trainers will help you achieve your fitness goals
-                with personalized training plans.
-              </p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/images/feature2.png"
-                alt="Feature 2"
-                className="mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2">Modern Equipment</h3>
-              <p>
-                We provide state-of-the-art gym equipment to ensure the best
-                workout experience.
-              </p>
-            </div>
-            <div className="text-center">
-              <img
-                src="/images/feature3.png"
-                alt="Feature 3"
-                className="mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2">Flexible Schedules</h3>
-              <p>
-                Our gym offers flexible class schedules to fit into your busy
-                lifestyle.
-              </p>
-            </div>
-          </div>
+          <Link href="/login">
+            <button className="bg-gray-500 text-white px-8 py-3 rounded-full hover:bg-gray-600 transition-all">
+              Get Started
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -95,16 +51,18 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-yellow-500 text-white">
+      <section className="py-16 bg-gray-500 text-white">
         <div className="container mx-auto px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Join Us?</h2>
           <p className="text-lg mb-8">
             Sign up today and start your journey towards a healthier and
             stronger you!
           </p>
-          <button className="bg-white text-yellow-500 px-8 py-3 rounded-full hover:bg-gray-100 transition-all">
-            Sign Up Now
-          </button>
+          <Link href="/register">
+            <button className="bg-white text-gray-500 px-8 py-3 rounded-full hover:bg-gray-100 transition-all">
+              Sign Up Now
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -112,8 +70,7 @@ const LandingPage: React.FC = () => {
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-8 text-center">
           <p>
-            &copy; {new Date().getFullYear()} Gym Landing Page. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Smart Gym. All rights reserved.
           </p>
         </div>
       </footer>

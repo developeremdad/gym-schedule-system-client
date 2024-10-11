@@ -79,14 +79,15 @@ const Sidebar = () => {
                 <span className="block py-2.5 px-4">Home</span>
               </Link>
             </li>
-            <li className="hover:bg-gray-200 active:bg-gray-200">
-              <Link href="/trainee/my-classes">
-                <span className="block py-2.5 px-4">My Classes</span>
-              </Link>
-            </li>
+
             <li className="hover:bg-gray-200 active:bg-gray-200">
               <Link href="/trainee/available-schedule">
                 <span className="block py-2.5 px-4">Available Schedule</span>
+              </Link>
+            </li>
+            <li className="hover:bg-gray-200 active:bg-gray-200">
+              <Link href="/trainee/my-classes">
+                <span className="block py-2.5 px-4">My Classes</span>
               </Link>
             </li>
             <li className="hover:bg-gray-200 active:bg-gray-200">

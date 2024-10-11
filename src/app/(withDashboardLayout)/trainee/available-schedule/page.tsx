@@ -60,10 +60,12 @@ const ManageClassSchedules = () => {
                 <td className="p-2 border">
                   <button
                     className="btn btn-outline mr-2"
-                    disabled={schedule?.trainees?.length >= 10}
+                    disabled={
+                      schedule?.trainees?.length >= 10 || !schedule?.trainer
+                    }
                     onClick={() => handleBookSchedule(schedule._id)}
                   >
-                    Booking
+                    {!schedule?.trainer ? "No Trainer" : "Booking"}
                   </button>
                 </td>
               </tr>
