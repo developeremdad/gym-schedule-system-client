@@ -48,6 +48,17 @@ const classScheduleManagement = baseApi.injectEndpoints({
       },
       invalidatesTags: ["schedule"],
     }),
+
+    assignTrainerToClassSchedule: builder.mutation({
+      query: (payload) => {
+        return {
+          url: `/classSchedules/assign-trainer/${payload.classScheduleId}`,
+          method: "PATCH",
+          body: payload.data,
+        };
+      },
+      invalidatesTags: ["schedule"],
+    }),
   }),
 });
 
@@ -56,4 +67,5 @@ export const {
   useAddNewClassScheduleMutation,
   useDeleteClassScheduleMutation,
   useUpdateClassScheduleMutation,
+  useAssignTrainerToClassScheduleMutation,
 } = classScheduleManagement;
