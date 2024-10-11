@@ -25,6 +25,7 @@ const adminApiManagement = baseApi.injectEndpoints({
           body: payload,
         };
       },
+      invalidatesTags: ["user"],
     }),
 
     deleteTrainer: builder.mutation({

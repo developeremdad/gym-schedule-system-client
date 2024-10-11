@@ -26,7 +26,9 @@ const ManageTrainers = () => {
   return (
     <div className="container mx-auto">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold mb-4">Trainer Management</h1>
+        <h1 className="text-2xl font-bold mb-4">
+          Trainer Management ({data?.data?.length || 0})
+        </h1>
         <Link href="/admin/add-trainer">
           <button className="btn btn-outline btn-sm">Add New Trainer</button>
         </Link>

@@ -18,7 +18,14 @@ const AddTrainer = () => {
     toast.error("Something went wrong.");
   }
 
+  const defaultValues = {
+    fullName: "",
+    email: "",
+    password: "",
+  };
+
   const handleFormSubmit = async (values: FieldValues) => {
+    addNewTrainer(values);
     console.log(values);
   };
 
@@ -28,21 +35,24 @@ const AddTrainer = () => {
         <h1 className="text-2xl font-bold text-center mb-4">
           Create New Trainer
         </h1>
-        <MyForm onSubmit={handleFormSubmit}>
+        <MyForm onSubmit={handleFormSubmit} defaultValues={defaultValues}>
           <MyInput
             name="fullName"
+            type="text"
             placeholder="Enter full name"
             required
             label="Full Name"
           />
           <MyInput
             name="email"
+            type="email"
             required
             placeholder="Enter email"
             label="Email"
           />
           <MyInput
             name="password"
+            type="password"
             placeholder="Enter password"
             label="Password"
           />
