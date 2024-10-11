@@ -72,7 +72,7 @@ const Navbar = () => {
                   : userInfo?.role === "trainer"
                   ? "/trainer/my-assigned-classes"
                   : userInfo?.role === "trainee"
-                  ? "/trainee/my-classes"
+                  ? "/trainee/available-schedule"
                   : "/"
               }`}
               className="btn"
