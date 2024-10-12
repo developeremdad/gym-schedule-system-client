@@ -38,6 +38,12 @@ The client-side of the **Gym Class Scheduling and Membership Management System**
 
 ---
 
+## **ER Diagram**
+
+Below is the Entity Relationship (ER) Diagram for the system:
+
+![ER Diagram](./ER-diagram-gym-schedule-management.png)
+
 ## **API Integration**
 
 The client-side interacts with the backend through secure API endpoints. Here's an overview of some of the core API integrations:
